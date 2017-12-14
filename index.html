@@ -48,10 +48,10 @@ figure {margin-top: 1cm;
 <h2>Summary of Contents</h2>
 <h3><ol><li><a href="#intro">Introduction</a></li>
 	<li><a href="#obj">Contribution Objectives</a></li>
-	<li>Data and Methodology</li>
-	<li>Results</li>
-	<li>Analysis and Discussion</li>
-	<li>Future Work</li>
+	<li><a href="#mthd">Data and Methodology</a></li>
+	<li><a href="#results">Results</a></li>
+	<li><a href="#disc">Analysis and Discussion</a></li>
+	<li><a href="#future">Future Work</a></li>
 	<li><a href="#ref">References</a></li>
 	</ol></h3>
 </div>
@@ -75,12 +75,35 @@ figure {margin-top: 1cm;
 
 <div id="mthd">
 <h2>Data and Methodology</h2>
-<p>We chose to use the same datasets used in the study([<a href="#r4">4</a>]), which is accessible from a public database. In addition, we explored their methodology to ensure our methodology and results could be comparable to those of the study through replicating the extraction of identical datasets [<a href="t1">Table 1</a>] and running preliminary tests. 
+<p>We built off the same datasets used in the study([<a href="#r4">4</a>]), which were extracted using the open-source tool <a href="http://segatalab.cibio.unitn.it/tools/metaml/">MetAML</a> and are accessible from a public database. In addition, we explored their methodology to ensure our methodology and results could be comparable to those of the study through replicating the datasets [<a href="t1">Table 1</a>], and running preliminary tests. 
 </p>
 <figure id="t1"><img src="images/journal.pcbi.1004977.t001.PNG" alt="Table 1" width=95%>
-<figcaption>Table 1: The number of samples per dataset [<a href="#r4">4</a>]</figcaption></figure>
+<figcaption>Table 1: The number of samples per dataset. [<a href="#r4">4</a>] The T2D data was collected from Chinese women while the WT2D data was collected from European women.</figcaption></figure>
+<p>The data was initially already separated by species abundance and strain-specific markers data, but included many more samples than was used in the study. In process of duplicating the datasets, we found that samples with certain disease fields were excluded from the study, presumably in order to reduce the ambiguity of the data. The reasoning behind some exclusions were obvious, such as samples with the disease state of " -" and the "n" disease state for the obesity dataset, where the foil of "obesity" was "leanness." The removal of "impaired glucose tolerance" samples in the WT2D dataset likely served to make the data binary- not only for the aforementioned purpose of reducing ambiguity, but also in order to match the binary nature of the T2D dataset. On the other hand, the removal of the "large adenoma" samples while keeping "small adenoma" in the colorectal cancer dataset is not immediately obvious, but could be related to its small sample size.
+</p>
+<p>We built classification models based on the species abundance profile for each disease data set using Random Forest and Multi-layer Perceptron algorithms implemented in <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>. The data sets were split into training and test sets with ratios of 66.6 percent and 33.3 percent, respectively. We compared the classification performance of Random Forest, one of the most successful algorithms in the previous paper [<a href="#f1">Figure 1</a>], with that of the Multi-layer Perceptron [Table 2]. In four cases, Random Forest shows better performance. However, it does not surpass the Multi-layer Perceptron in all cases. Specifically, Neural Networks show better performance for predicting obesity and type 2 diabetes (European cohort). This result could be changed if we applied hyperparameter optimization with cross-validation schemes for both methods. In addition, it would enable us to evaluate the prediction performance of other neural network methods.
+</p>
+<figure id="f1"> <img src="images/journal.pcbi.1004977.g002.PNG" alt="Figure 1" width=95%>
+<figcaption>Figure 1: Cross-validation results from previous study [<a href="#r4">4</a>]</figcaption></figure>
 </div>
 
+<div id="results">
+<h2>Results</h2>
+<p>
+</p>
+</div>
+
+<div id="disc">
+<h2>Analysis and Discussion</h2>
+<p>
+</p>
+</div>
+
+<div id="future">
+<h2>Future Work</h2>
+<p>
+</p>
+</div>
 
 <hr>
 <div id="ref">
