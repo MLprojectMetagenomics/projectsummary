@@ -4,31 +4,55 @@
 <style>
 body {color: Maroon;
 	font-family: "arial";
-	margin-left: 2cm;
-	margin-right: 2cm;
+	margin-left: 3cm;
+	margin-right: 3cm;
 	margin-top: 1cm;
 	margin-bottom: 1cm;}
 h1   {color: DarkSlateBlue;}
 h2   {color: DarkSlateBlue;}
 p    {color: Maroon;}
 #nav {margin: 1cm;}
+#intro {width: 80%;
+	margin-top: 1cm;
+	margin-bottom: 1cm;}
+#obj {margin-top: 1cm;
+	margin-bottom: 1cm;
+	width: 95%;}
+#mthd {margin-top: 1cm;
+	margin-bottom: 1cm;
+	width: 95%;}
+#ref {margin-top: 1cm;}
+a:link {color: FireBrick;
+	text-decoration: none;}
+a:visited {color: #460713;
+	text-decoration: none;}
+a:hover {color: Crimson;
+	text-decoration: underline;}
+a:active {color: Gold;
+	text-decoration: underline;}
+figure {margin-top: 1cm;
+	margin-bottom: 1cm;}
 </style>
 <title>Machine Learning for Diagnostics</title>
 </head>
 <body>
 
 
-
+<div id="title">
 <h1>Neural Networks for Disease State Prediction Using Metagenomic Markers</h1>
 <h4>Min Oh and Sheila Zhu</h4>
 <hr>
+</div>
 
 <div id="nav">
 <h2>Summary of Contents</h2>
 <h3><ol><li><a href="#intro">Introduction</a></li>
-	<li>Part 1: Exploring Methodology</li>
+	<li><a href="#obj">Contribution Objectives</a></li>
+	<li>Data and Methodology</li>
 	<li>Results</li>
-	<li>References</li>
+	<li>Analysis and Discussion</li>
+	<li>Future Work</li>
+	<li><a href="#ref">References</a></li>
 	</ol></h3>
 </div>
 <br><br>
@@ -36,8 +60,39 @@ p    {color: Maroon;}
 
 <div id="intro">
 <h2>Introduction</h2>
-<p>The field of Metagenomics has gained a lot of momentum in recent years, benefitting from the enormous advances in technology and resultant increase in availability of data, and may soon see a variety of applications in clinical settings.</p>
+<p>The human microbiome, which has been referred to as our second genome, consists of the microorganisms that live in and on our bodies [<a href="#r1">1</a>]. They interact with the immune system, influence metabolic activities, and consequently also affect disease state [<a href="#r2">2</a>]. Although the human microbiome is crucial for human health, it has largely been ignored. However, it has recently gained attention as a promising component of clinical diagnostics, as the substantial progress of next-generation DNA sequencing technologies has made it possible to capture a snapshot of microbial communities from human samples [<a href="#r1">1</a>, <a href="#r3">3</a>].</p>
 </div>
+
+<div id="obj">
+<h2>Contribution Objectives</h2>
+<p>Previous studies have proposed disease-predictive models based on high-resolution microbial features, but as they only tested SVM, RF, Lasso, and elastic net (ENet) classification methods, the application of machine learning models is still lacking elaboration [<a href="#r4">4</a>]. While focusing primarily on the additional application of neural network machine learning methods, we hoped to explore the following questions:<br>
+<ul><li>What data analytic techniques are suitable for human microbiome profile-based disease prediction?</li>
+	<li>Can a neural network model surpass existing methods?</li>
+	<li>What real-world insights can be learned from this project?</li>
+</ul>
+</p>
+</div>
+
+<div id="mthd">
+<h2>Data and Methodology</h2>
+<p>We chose to use the same datasets used in the study([<a href="#r4">4</a>]), which is accessible from a public database. In addition, we explored their methodology to ensure our methodology and results could be comparable to those of the study through replicating the extraction of identical datasets [<a href="t1">Table 1</a>] and running preliminary tests. 
+</p>
+<figure id="t1"><img src="images/journal.pcbi.1004977.t001.PNG" alt="Table 1" width=95%>
+<figcaption>Table 1: The number of samples per dataset [<a href="#r4">4</a>]</figcaption></figure>
+</div>
+
+
+<hr>
+<div id="ref">
+<h2>References</h2>
+<p><ol><li id='r1'>Grice, Elizabeth A., and Julia A. Segre. "The human microbiome: our second genome." Annual review of genomics and human genetics 13 (2012): 151-170.</li>
+	<li id='r2'>Honda, Kenya, and Dan R. Littman. "The microbiota in adaptive immune homeostasis and disease." Nature 535.7610 (2016): 75-84.</li>
+	<li id='r3'>Hardwick, Simon A., Ira W. Deveson, and Tim R. Mercer. "Reference standards for next-generation sequencing." Nature Reviews Genetics 18.8 (2017): 473-484.</li>
+	<li id='r4'>Pasolli, Edoardo, et al. <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004977">"Machine learning meta-analysis of large metagenomic datasets: tools and biological insights."</a> PLoS computational biology 12.7 (2016): e1004977.</li>
+	<li id='r5'>Truong, Duy Tin, et al. "MetaPhlAn2 for enhanced metagenomic taxonomic profiling." Nature methods 12.10 (2015): 902-903.</li>
+	</ol></p>
+</div>
+
 
 </body>
 </html>
