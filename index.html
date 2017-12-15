@@ -93,7 +93,7 @@ figure {margin-top: 1cm;
 </p>
 <figure id="datex"><img src="images/data_ex.png" alt="Example of Data" width=95%>
 <figcaption>Example of processed data</figcaption></figure>
-<p>The Random Forest(RF) and Multi-layer Perceptron(MLP), as well as Support Vector Machine(SVP) algorithms were built with the following parameters: Random Forest used 100 trees with the number of randomly chosen attributes calculated as integer(log<sub>2</sub>(# of features) + 1); Multi-layer Perceptron had a learning rate of 0.3, momentum of 0.2, a total of three layers(including input and output), number of units in the hidden layer calculated as integer((# of features + # of classes)/2), and 500 epochs; and Support Vector Machine had cost set to 1.0, epsilon in the loss function set to 0.1, and used the Radial Basis Function for the kernel.
+<p>The Random Forest(RF) and Multi-layer Perceptron(MLP), as well as Support Vector Machine(SVP) algorithms were built with the following parameters: Random Forest used 100 trees with the number of randomly chosen attributes calculated as integer(log<sub>2</sub>(# of features) + 1); Multi-layer Perceptron had a learning rate of 0.3, momentum of 0.2, a total of three layers(including input and output), number of units in the hidden layer calculated as integer((# of features + # of classes)/2), and 500 epochs; and Support Vector Machine had cost set to 1.0, epsilon in the loss function set to 0.1, and used the Radial Basis Function for the kernel. The results were also validated using ten-fold cross-validation for each test, and we chose the key performance metric as area under the curve(AUC), which is the value in <a href="t2">Table 2</a> and <a href="t3">Table 3</a>.
 </p>
 </div>
 
@@ -109,13 +109,13 @@ figure {margin-top: 1cm;
 </p>
 <figure id="t3"><img src="images/20171214.png" alt="Table 3" width=95%>
 <figcaption>Table 3: Performance of RF, ML Perceptron, and SVM on datasets after Feature Selection.</figcaption></figure>
-<p>Applying Infogain improved the performance of the ML Perceptron enough to exceed the performance of SVM for the Colorectal Cancer and T2D datasets, when compared to the original datasets[<a href="t3">Table 3</a>]. Though largely unable to outperform RF in most cases, MLP improved significantly after infogain feature selection, 
+<p>Applying Infogain improved the performance of the ML Perceptron enough to exceed the performance of SVM for the Colorectal Cancer and T2D datasets, when compared to the original datasets[<a href="t3">Table 3</a>]. Though its performance rarely outstripped RF in most cases, MLP improved significantly enough after infogain feature selection to outperform RF for the obesity dataset by a considerable margin.
 </p>
 </div>
 
 <div id="disc">
 <h2>Analysis and Discussion</h2>
-<p>Applying feature selection improved performance for almost all datasets, with the exception
+<p>Applying feature selection improved performance for almost all datasets, with the exception of Inflammatory Bowel Disease(IBD). 
 </p>
 </div>
 
