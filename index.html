@@ -89,7 +89,11 @@ figure {margin-top: 1cm;
 </p>
 <figure id="t1"><img src="images/journal.pcbi.1004977.t001.PNG" alt="Table 1" width=95%>
 <figcaption>Table 1: The number of samples per dataset. [<a href="#r4">4</a>] The T2D data was collected from Chinese women while the WT2D data was collected from European women.</figcaption></figure>
-<p>The data was initially already separated by species abundance and strain-specific markers data, but included many more samples than was used in the study. In process of duplicating the datasets, we found that samples with certain disease fields were excluded from the study, presumably in order to reduce the ambiguity of the data. The reasoning behind some exclusions were obvious, such as samples with the disease state of " -" and the "n" disease state for the obesity dataset, where the foil of "obesity" was "leanness." The removal of "impaired glucose tolerance" samples in the WT2D dataset likely served to make the data binary- not only for the aforementioned purpose of reducing ambiguity, but also in order to match the binary nature of the T2D dataset. On the other hand, the removal of the "large adenoma" samples while keeping "small adenoma" in the colorectal cancer dataset is not immediately obvious, but could be related to its small sample size.
+<p>The data was initially already separated by species abundance and strain-specific markers data, but included many more samples than was used in the study. In process of duplicating the datasets, we found that samples with certain disease fields were excluded from the study, presumably in order to reduce the ambiguity of the data. The reasoning behind some exclusions were obvious, such as samples with the disease state of " -" and the "n" disease state for the obesity dataset, where the foil of "obesity" was "leanness." The removal of "impaired glucose tolerance" samples in the WT2D dataset likely served to make the data binary- not only for the aforementioned purpose of reducing ambiguity, but also in order to match the binary nature of the T2D dataset. On the other hand, the reason for the removal of the "large adenoma" samples while keeping "small adenoma" in the colorectal cancer dataset is not as easily induced, but could be related to its small sample size.
+</p>
+<figure id="datex"><img src="images/data_ex.png" alt="Example of Data" width=95%>
+<figcaption>Example of processed data</figcaption></figure>
+<p>The Random Forest(RF) and Multi-layer Perceptron(MLP), as well as Support Vector Machine(SVP) algorithms were built with the following parameters: Random Forest used 100 trees with the number of randomly chosen attributes calculated as integer(log<sub>2</sub>(# of features) + 1); Multi-layer Perceptron had a learning rate of 0.3, momentum of 0.2, a total of three layers(including input and output), number of units in the hidden layer calculated as integer((# of features + # of classes)/2), and 500 epochs; and Support Vector Machine had cost set to 1.0, epsilon in the loss function set to 0.1, and used the Radial Basis Function for the kernel.
 </p>
 </div>
 
@@ -100,17 +104,18 @@ figure {margin-top: 1cm;
 <figure id="f1"><img src="images/journal.pcbi.1004977.g002.PNG" alt="Figure 1" width=95%>
 <figcaption>Figure 1: Cross-validated results from previous study [<a href="#r4">4</a>]</figcaption></figure>
 <figure id="t2"><img src="images/20171213235716.png" alt="Table 2" width=95%>
-<figcaption>Figure 2: Cross-validated preliminary results comparing the prediction performance Random Forest(RF) and Multi-layer Perceptron algorithms</figcaption></figure>
-<p>
-After performing the preliminary experiments, we were interested to see if performing feature selection on the dataset could improve prediction performance, 
+<figcaption>Table 2: Cross-validated preliminary results comparing the prediction performance Random Forest(RF) and Multi-layer Perceptron algorithms</figcaption></figure>
+<p>Performing feature selection (FS) on the datasets could improve prediction performance, so we chose to use the Information Gain (Infogain) and the Relief feature selection algorithms to refine the dataset by identifying the most significant/valuable features and removing the rest. For these tests, we also included Support Vector Machines(SVM), another major point of comparison in the study[<a href="#r4">4</a>], in addition to Random Forest(RF) and Multi-layer Perceptron(MLP) for comparison. 
 </p>
 <figure id="t3"><img src="images/20171214.png" alt="Table 3" width=95%>
-<figcaption>Figure 3: Performance of RF, ML Perceptron, and SVM on datasets after Feature Selection.</figcaption></figure>
+<figcaption>Table 3: Performance of RF, ML Perceptron, and SVM on datasets after Feature Selection.</figcaption></figure>
+<p>Applying Infogain improved the performance of the ML Perceptron enough to exceed the performance of SVM for the Colorectal Cancer and T2D datasets, when compared to the original datasets[<a href="t3">Table 3</a>]. Though largely unable to outperform RF in most cases, MLP improved significantly after infogain feature selection, 
+</p>
 </div>
 
 <div id="disc">
 <h2>Analysis and Discussion</h2>
-<p>
+<p>Applying feature selection improved performance for almost all datasets, with the exception
 </p>
 </div>
 
