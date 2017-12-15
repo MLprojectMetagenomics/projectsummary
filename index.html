@@ -21,6 +21,15 @@ p    {color: Maroon;}
 #mthd {margin-top: 1cm;
 	margin-bottom: 1cm;
 	width: 95%;}
+#results {margin-top: 1cm;
+	margin-bottom: 1cm;
+	width: 95%;}
+#disc {margin-top: 1cm;
+	margin-bottom: 1cm;
+	width: 95%;}
+#future {margin-top: 1cm;
+	margin-bottom: 1cm;
+	width: 95%;}
 #ref {margin-top: 1cm;}
 a:link {color: FireBrick;
 	text-decoration: none;}
@@ -40,6 +49,7 @@ figure {margin-top: 1cm;
 
 <div id="title">
 <h1>Neural Networks for Disease State Prediction Using Metagenomic Markers</h1>
+<h4>Machine Learning, Fall 2017</h4>
 <h4>Min Oh and Sheila Zhu</h4>
 <hr>
 </div>
@@ -81,16 +91,21 @@ figure {margin-top: 1cm;
 <figcaption>Table 1: The number of samples per dataset. [<a href="#r4">4</a>] The T2D data was collected from Chinese women while the WT2D data was collected from European women.</figcaption></figure>
 <p>The data was initially already separated by species abundance and strain-specific markers data, but included many more samples than was used in the study. In process of duplicating the datasets, we found that samples with certain disease fields were excluded from the study, presumably in order to reduce the ambiguity of the data. The reasoning behind some exclusions were obvious, such as samples with the disease state of " -" and the "n" disease state for the obesity dataset, where the foil of "obesity" was "leanness." The removal of "impaired glucose tolerance" samples in the WT2D dataset likely served to make the data binary- not only for the aforementioned purpose of reducing ambiguity, but also in order to match the binary nature of the T2D dataset. On the other hand, the removal of the "large adenoma" samples while keeping "small adenoma" in the colorectal cancer dataset is not immediately obvious, but could be related to its small sample size.
 </p>
-<p>We built classification models based on the species abundance profile for each disease data set using Random Forest and Multi-layer Perceptron algorithms implemented in <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>. The data sets were split into training and test sets with ratios of 66.6 percent and 33.3 percent, respectively. We compared the classification performance of Random Forest, one of the most successful algorithms in the previous paper [<a href="#f1">Figure 1</a>], with that of the Multi-layer Perceptron [Table 2]. In four cases, Random Forest shows better performance. However, it does not surpass the Multi-layer Perceptron in all cases. Specifically, Neural Networks show better performance for predicting obesity and type 2 diabetes (European cohort). This result could be changed if we applied hyperparameter optimization with cross-validation schemes for both methods. In addition, it would enable us to evaluate the prediction performance of other neural network methods.
-</p>
-<figure id="f1"> <img src="images/journal.pcbi.1004977.g002.PNG" alt="Figure 1" width=95%>
-<figcaption>Figure 1: Cross-validation results from previous study [<a href="#r4">4</a>]</figcaption></figure>
 </div>
 
 <div id="results">
 <h2>Results</h2>
-<p>
+<p>We built classification models based on the species abundance profile for each disease data set using Random Forest and Multi-layer Perceptron algorithms implemented in <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>. The data sets were split into training and test sets with ratios of 66.6 percent and 33.3 percent, respectively. We compared the classification performance of Random Forest, one of the most successful algorithms in the previous paper [<a href="#f1">Figure 1</a>], with that of the Multi-layer Perceptron [<a href="t2">Table 2</a>]. In four cases, Random Forest shows better performance. However, it did not surpass the Multi-layer Perceptron in all cases. Specifically, Neural Networks showed better performance for predicting obesity and type 2 diabetes (European cohort). 
 </p>
+<figure id="f1"><img src="images/journal.pcbi.1004977.g002.PNG" alt="Figure 1" width=95%>
+<figcaption>Figure 1: Cross-validated results from previous study [<a href="#r4">4</a>]</figcaption></figure>
+<figure id="t2"><img src="images/20171213235716.png" alt="Table 2" width=95%>
+<figcaption>Figure 2: Cross-validated preliminary results comparing the prediction performance Random Forest(RF) and Multi-layer Perceptron algorithms</figcaption></figure>
+<p>
+After performing the preliminary experiments, we were interested to see if performing feature selection on the dataset could improve prediction performance, 
+</p>
+<figure id="t3"><img src="images/20171214.png" alt="Table 3" width=95%>
+<figcaption>Figure 3: Performance of RF, ML Perceptron, and SVM on datasets after Feature Selection.</figcaption></figure>
 </div>
 
 <div id="disc">
@@ -101,7 +116,7 @@ figure {margin-top: 1cm;
 
 <div id="future">
 <h2>Future Work</h2>
-<p>
+<p>As the time frame limited what could be included in the scope of this project, there are several ways to extend on it: exploration of more hyperparameter optimization methods with cross-validation schemes and incorporating strain-specific marker data in the comparison of the 
 </p>
 </div>
 
